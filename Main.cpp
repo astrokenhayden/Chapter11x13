@@ -48,15 +48,48 @@ using namespace std;
 
 int main() {
 
-    bankAccount bank;
-    int bankNumber = 1001;
+   
+    int bankNumber = 1000;
     double bal = 3000;
-    bank.setBankNumber(2002);
-    bank.setBalance(3000.3);
+    //bankAccount bank(bankNumber, bal);
+    
 
-    bank.print();
+    //bank.print();
+
+    checkingAccount bank2(bankNumber++, 1000);
+    checkingAccount bank3(bankNumber++, 450);
+    savingsAccount bank4(bankNumber++, 9300);
+    savingsAccount bank5(bankNumber++, 32.92);
+
+    bank2.postInterest();
+    bank3.postInterest();
+    bank4.postInterestRate();
+    bank5.postInterestRate();
+    cout << "                     Bank Acount Program              " << endl << endl;
+    cout << "******************** Before Withdrawals ********************" << endl;
+    cout << setprecision(10);
+    bank2.print();
+    bank3.print();
+    bank4.print();
+    bank5.print();
+
+    cout << "*************************************************************" << endl << endl;
+    
+    bank2.writeCheck(250);
+    bank3.writeCheck(350);
+    bank4.withdraw(120);
+    bank5.withdraw(290);
+
+    cout << "******************** After Withdrawals **********************" << endl;
+
+    bank2.print();
+    bank3.print();
+    bank4.print();
+    bank5.print();
+
+    cout << "*************************************************************" << endl << endl;
 
 
-	//system("Pause");
+	system("Pause");
 	return 0;
 }

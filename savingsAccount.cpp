@@ -1,19 +1,20 @@
 #include "savingsAccount.h"
 #include "bankAccount.h"
+#include <iostream>
+using namespace std;
 
-savingsAccount::savingsAccount()
-{
+savingsAccount::savingsAccount() {
+	interest = 0.0;
+	balance = 0;
+	bankAccount = 0;
+
 }
-
-void savingsAccount::bankNumber()
+savingsAccount::savingsAccount(int bankInfo, double bal)
 {
-	bankAccount.bank
+	interest = 0.0;
+	balance = bal;
+	bankAccount = bankInfo;
 
-}
-
-void savingsAccount::balance()
-{
-	
 }
 
 double savingsAccount::setInterestRate()
@@ -31,11 +32,23 @@ double savingsAccount::postInterestRate()
 	return 0.0;
 }
 
-double savingsAccount::withdraw()
+double savingsAccount::deposit(double amount)
 {
-	return 0.0;
+	//bankAccount::deposit(amount);
+	balance = balance + amount;
+	return balance;
+}
+
+double savingsAccount::withdraw(double money)
+{
+	balance = balance - money;
+
+	return balance;
 }
 
 void savingsAccount::print()
 {
+	bankAccount::print();
+	
+	cout << "Savings ACCT#:                " << bankAccount << "     Balance: $" << balance << endl;
 }

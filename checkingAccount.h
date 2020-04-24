@@ -22,25 +22,30 @@ class checkingAccount: public bankAccount
 {
     
 public:
-    
     checkingAccount();
-    double setInterest();
+    checkingAccount(int bankInfo, double bal);
+    void setInterest(double inter);
     double getInterestRate();
-    double setMinBalance();
+    void setMinBalance(double min);
     double getMinBalance();
-    double setServeChar();
+    void setServeChar(double charge);
     double getServeChar();
-    double writeCheck();
+    double writeCheck(double check);
 
+    
+
+    double deposit(double amount);
     double postInterest();
-    double underMinBalance();
+    bool underMinBalance();
 
     void print();
 
 
 private:
+    double minBalance;
     double interest;
+    int bankAccountNum;
     double balance;
-
+    double serveChar;
 };
 

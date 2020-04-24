@@ -19,14 +19,15 @@ class savingsAccount: public bankAccount
 {
 public:
     savingsAccount();
-    void bankNumber();
-    void balance();
+    savingsAccount(int bankInfo, double bal);
+    
     
     double setInterestRate();
     double getInterestRate();
     double postInterestRate();
 
-    double withdraw();
+    double deposit(double amount);
+    double withdraw(double money);
 
     void print();
 

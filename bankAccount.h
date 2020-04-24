@@ -15,6 +15,7 @@ class bankAccount
 public:
     int getBankNumber();
     bankAccount();
+    bankAccount(int bankInfo, double bal);
     double getBalance();
     void setBalance(double bal);
     void setBankNumber(int bankNum);

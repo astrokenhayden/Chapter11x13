@@ -4,13 +4,19 @@ using namespace std;
 
 int bankAccount::getBankNumber() // getting the bank number
 {
-	return balance;
+	return bankNumber;
 }
 
-bankAccount::bankAccount() // construtor. place them all at 0 to begin with
+bankAccount::bankAccount()
 {
 	bankNumber = 0;
 	balance = 0.0;
+}
+
+bankAccount::bankAccount(int bankInfo, double bal) // construtor. place them all at 0 to begin with
+{
+	bankNumber = bankInfo;
+	balance = bal;
 }
 
 double bankAccount::getBalance()
@@ -45,7 +51,6 @@ double bankAccount::withdraw(double withdraw)
 
 void bankAccount::print()
 {
+	//cout << "Acct#: " << bankNumber << "  Balance:  $" << balance << endl;
 
-	cout << bankNumber << endl;
-	cout << balance << endl;
 }
